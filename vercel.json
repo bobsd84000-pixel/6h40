@@ -1,0 +1,8 @@
+{
+  "functions": {
+    "api/*.js": { "includeFiles": "donnees/**", "maxDuration": 30 }
+  },
+  "crons": [
+    { "path": "/api/cron", "schedule": "40 5 * * *" }
+  ]
+}
