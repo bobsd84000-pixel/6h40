@@ -245,8 +245,9 @@ footer{margin-top:40px;color:var(--sourd);font-size:.8125rem}
     <div class="sources">
       <div><span>Dollar</span><span id="src-usd">Frankfurter (BCE), en direct</span></div>
       <div><span>Livre sterling</span><span id="src-gbp">Frankfurter (BCE), en direct</span></div>
-      <div><span>Brent, or, taux 10 ans</span><span>prixdubaril.com, goldmarket.fr, Zonebourse · 23 oct.</span></div>
-      <div><span>Gazole</span><span>prix-carburant.eu · 23 oct.</span></div>
+      <div><span>Brent, or</span><span>Yahoo Finance, converti au cours BCE · chaque matin</span></div>
+      <div><span>Taux 10 ans</span><span>Club Patrimoine, Boursorama · relevé à la main</span></div>
+      <div><span>Gazole</span><span>data.economie.gouv.fr · chaque matin</span></div>
       <div><span>Gaz</span><span>Prix repère CRE · octobre</span></div>
       <div><span>Inflation, crédit immo</span><span>Insee (sept.), Pretto (oct.)</span></div>
       <div><span>Livret A</span><span>info.gouv.fr · depuis le 1er août</span></div>
@@ -372,7 +373,7 @@ function appliquer(r,m,ancien){
   r.d=(pct>0.005?'+':pct<-0.005?'−':'')+fr(Math.abs(pct),2)+' %';r.sous='pour 1 '+d.sym+' · '+jr;
   r.txt='Pour 1 '+d.nom+', cours de référence BCE du '+jr+' ('+fr(m.v,4)+' €).';
   $('src-'+r.id).textContent='Frankfurter (BCE) · '+(ancien?'dernier relevé du ':'')+jr;
-  rendre(true);verifier();
+  rendre(true);verifier();majCadran();
 }
 
 // Graphe générique : seuls les points datés et sourcés, espacés selon leur vraie date.
@@ -493,14 +494,14 @@ function signe(n,k){return (n>0?'+':n<0?'−':'')+euros(Math.abs(n),k)}
 function mensu(c,t,ans){var i=t/100/12,n=ans*12;return c*i/(1-Math.pow(1+i,-n))}
 function perso(){
   // 1. énergie du mois : carburant + gaz
-  var gz=val_('gazole').serie,g1=gz[gz.length-1],g0=gz.find(function(p){return p.j==='2026-10-12'});
+  var gz=val_('gazole').serie,g1=gz[gz.length-1],g0=gz.find(function(p){return p.j==='2026-10-12'})||gz[0];
   var litres=P.conso*P.km/100,carb=litres*g1.v,dCarb=litres*(g1.v-g0.v);
   var gs=val_('gaz').serie,gaz=P.chauf==='gaz'?P.kwh/12*gs[1].v:0,dGaz=P.chauf==='gaz'?P.kwh/12*(gs[1].v-gs[0].v):0;
   var e=$('c-energie');
   if(!litres&&!gaz){e.hidden=true}else{e.hidden=false;
     e.innerHTML='<span class="tag">Ton énergie ce mois-ci</span><b class="gros mono">'+euros(carb+gaz,0)+'</b><span class="phrase">'+
     (dGaz+dCarb>0?'Soit '+signe(dGaz+dCarb)+' par mois':'Soit '+signe(dGaz+dCarb)+' par mois')+(gaz?', surtout à cause du gaz (+8 % en octobre).':'.')+'</span>'+
-    '<span class="detail mono">Carburant '+euros(carb,0)+' ('+signe(dCarb)+' depuis le 12 oct.)'+(gaz?' · Gaz '+euros(gaz,0)+' ('+signe(dGaz)+' depuis septembre)':'')+'</span>'}
+    '<span class="detail mono">Carburant '+euros(carb,0)+' ('+signe(dCarb)+' depuis le '+new Date(g0.j+'T12:00:00').toLocaleDateString('fr-FR',{day:'numeric',month:'short'})+')'+(gaz?' · Gaz '+euros(gaz,0)+' ('+signe(dGaz)+' depuis septembre)':'')+'</span>'}
   // 2. épargne : rendement réel du Livret A face à l'inflation
   var la=val_('livreta').num,inf=val_('inflation').num,reel=(1+la/100)/(1+inf/100)-1,perte=P.epargne*reel;
   var ep=$('c-epargne');
@@ -537,25 +538,42 @@ for(var i=0;i<=20;i++){var a=(-135+270*i/20)*Math.PI/180,gros=i%4===0,moyen=i%2=
     t.setAttribute('style','fill:'+(i>=12?'#ed7940':'#8f8f8f'));
     t.textContent=String(i/2);g.appendChild(t)}
 }
-var REP=[
- {nom:'Dollar',val:'0,89 €',pct:0,per:'SUR 1 JOUR'},
- {nom:'Baril Brent',val:'114,53 $',pct:1.2,per:'SUR 1 JOUR'},
- {nom:"Or, l'once",val:'3 588 €',pct:-2.7,per:'SUR 1 JOUR'},
- {nom:'Gazole, le litre',val:'2,359 €',pct:0.6,per:'SUR 24 H'}
-];
-var haut=REP.reduce(function(a,b){return b.pct>a.pct?b:a});
-var c=document.getElementById('cadran');
-document.getElementById('c-nom').textContent=haut.nom.toUpperCase();
-document.getElementById('c-val').textContent=haut.val;
-document.getElementById('c-var').textContent='▲ +'+haut.pct.toLocaleString('fr-FR',{minimumFractionDigits:1})+' %';
-document.getElementById('c-per').textContent=haut.per;
-c.setAttribute('aria-label','Plus forte hausse du jour : '+haut.nom+', '+haut.val+', +'+haut.pct.toLocaleString('fr-FR')+' %');
-c.setAttribute('role','img');c.removeAttribute('aria-hidden');
-var ang=-135+270*Math.max(0,Math.min(10,haut.pct))/10;
-requestAnimationFrame(function(){requestAnimationFrame(function(){c.style.setProperty('--angle',ang+'deg');c.classList.add('pret')})});
+majCadran();
 })();
+// Plus forte hausse du jour, lue dans le relevé (repères qui bougent chaque jour)
+function majCadran(){
+  var PER={usd:'SUR 1 JOUR',gbp:'SUR 1 JOUR',brent:'SUR 1 JOUR',or:'SUR 1 JOUR',gazole:'SUR 24 H'},haut=null;
+  R.forEach(function(r){var p=nombre(r.d);if(PER[r.id]&&!isNaN(p)&&(!haut||p>haut.pct))haut={nom:r.nom,val:r.v,pct:p,per:PER[r.id]}});
+  if(!haut)return;
+  var c=$('cadran'),s=haut.pct>0?'▲ +':haut.pct<0?'▼ −':'= ',p=Math.abs(haut.pct).toLocaleString('fr-FR',{minimumFractionDigits:1,maximumFractionDigits:2})+' %';
+  $('c-nom').textContent=haut.nom.toUpperCase();
+  $('c-val').textContent=haut.val;
+  $('c-var').textContent=s+p;
+  $('c-var').style.fill=haut.pct>0?'#7cd591':haut.pct<0?'#f78955':'#8f8f8f';
+  $('c-per').textContent=haut.per;
+  c.setAttribute('aria-label','Plus forte hausse du jour : '+haut.nom+', '+haut.val+', '+s.replace(/[▲▼= ]/g,'')+p);
+  c.setAttribute('role','img');c.removeAttribute('aria-hidden');
+  var ang=-135+270*Math.max(0,Math.min(10,haut.pct))/10;
+  requestAnimationFrame(function(){requestAnimationFrame(function(){c.style.setProperty('--angle',ang+'deg');c.classList.add('pret')})});
+}
 
-rendre(true);verifier();majReseau();devises();
+// Retour de paiement Lemon Squeezy (URL de confirmation : /?pro=1)
+if(/[?&]pro=1(&|$)/.test(location.search)){ecrire('cot-pro',true);history.replaceState(null,'',location.pathname+location.hash);setTimeout(function(){message('Bienvenue en Pro')},600)}
+
+rendre(false);verifier();majReseau();
+
+// Relevé du jour depuis le serveur. Si le serveur ne répond pas : valeurs ci-dessus + cours BCE en direct
+function chargerReleve(){
+  fetch('/api/releve').then(function(x){if(!x.ok)throw 0;return x.json()}).then(function(j){
+    Object.keys(j.reperes||{}).forEach(function(id){var r=val_(id);if(r){Object.assign(r,j.reperes[id]);r.live=0}});
+    if(j.date)$('date').textContent=j.date;
+    if(j.lienPro)LIEN_PRO=j.lienPro;
+    ['usd','gbp'].forEach(function(id){if(j.reperes&&j.reperes[id])$('src-'+id).textContent='BCE via Frankfurter · '+j.reperes[id].sous.split(' · ')[1]});
+    rendre(true);verifier();perso();majCadran();majReseau();
+    if(!j.reperes||!j.reperes.usd||!j.reperes.gbp)devises();
+  }).catch(function(){rendre(true);devises()});
+}
+chargerReleve();
 </script>
 </body>
 </html>
