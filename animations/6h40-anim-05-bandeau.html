@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>05 · Bandeau défilant</title>
+<style>
+  :root { --bg:#F4F1E9; --ink:#2A2A2A; --muted:#7A7468; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="clair"]) { --bg:#1B1B19; --ink:#EDEAE2; --muted:#9A958A; } }
+  body { margin:0; min-height:100vh; display:flex; align-items:center; background:var(--bg); color:var(--ink); font-family:system-ui,sans-serif; }
+  .tick { width:100%; overflow:hidden; white-space:nowrap; border-top:1px solid var(--muted); border-bottom:1px solid var(--muted); padding:12px 0; }
+  .tick div { display:inline-block; padding-left:100%; animation:scroll 12s linear infinite; font-variant-numeric:tabular-nums; }
+  @keyframes scroll { to { transform:translateX(-100%); } }
+  @media (prefers-reduced-motion: reduce) { .tick div { animation:none; padding-left:16px; } }
+</style>
+</head>
+<body>
+<div class="tick"><div>Dollar 0,9412 +0,0063 · Franc suisse 1,0487 −0,0021 · Euro 1,0000 +0,0002 · Livre 1,1638 −0,0054</div></div>
+</body>
+</html>

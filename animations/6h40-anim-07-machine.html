@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>07 · Machine à écrire</title>
+<style>
+  :root { --bg:#F4F1E9; --ink:#2A2A2A; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="clair"]) { --bg:#1B1B19; --ink:#EDEAE2; } }
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; background:var(--bg); color:var(--ink); font-family:system-ui,sans-serif; padding:16px; box-sizing:border-box; }
+  .type { font-size:18px; border-right:2px solid var(--ink); white-space:nowrap; overflow:hidden; width:0; animation:type 2.4s steps(30,end) forwards, caret .8s step-end infinite; }
+  @keyframes type { to { width:100%; } }
+  @keyframes caret { 50% { border-color:transparent; } }
+  @media (prefers-reduced-motion: reduce) { .type { animation:none; width:auto; border:0; } }
+</style>
+</head>
+<body>
+<div class="type">Relevé du jour : Dollar en hausse.</div>
+</body>
+</html>

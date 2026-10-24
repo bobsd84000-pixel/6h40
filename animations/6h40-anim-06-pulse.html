@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>06 · Point qui pulse</title>
+<style>
+  :root { --bg:#F4F1E9; --ink:#2A2A2A; --up:#2E6B4F; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="clair"]) { --bg:#1B1B19; --ink:#EDEAE2; --up:#7FC4A0; } }
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; background:var(--bg); color:var(--ink); font-family:system-ui,sans-serif; }
+  .pulse { display:flex; align-items:center; gap:10px; font-size:15px; }
+  .dot { width:10px; height:10px; border-radius:50%; background:var(--up); position:relative; }
+  .dot::after { content:""; position:absolute; inset:0; border-radius:50%; background:var(--up); animation:ping 1.6s ease-out infinite; }
+  @keyframes ping { 0% { transform:scale(1); opacity:.7; } 100% { transform:scale(3.2); opacity:0; } }
+  @media (prefers-reduced-motion: reduce) { .dot::after { animation:none; opacity:0; } }
+</style>
+</head>
+<body>
+<div class="pulse"><span class="dot"></span><span>Marché ouvert, mise à jour en direct</span></div>
+</body>
+</html>
