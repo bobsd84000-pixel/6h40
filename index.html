@@ -164,6 +164,22 @@ footer{margin-top:40px;color:var(--sourd);font-size:.8125rem}
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom));z-index:30;background:var(--toast-bg);color:var(--toast-fg);padding:12px 16px;border-radius:var(--r-m);font-size:.9375rem;box-shadow:var(--ombre);opacity:0;transform:translate(-50%,12px);transition:opacity .2s var(--ease-out),transform .2s var(--ease-out);pointer-events:none;white-space:nowrap}
 .toast.visible{opacity:1;transform:translate(-50%,0)}
 @media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;animation:none!important}}
+/* animations relevé (repris de 6h40-anim-05/06/07/10) */
+.anim{margin:24px 0;display:grid;gap:12px}
+.anim-bandeau{overflow:hidden;white-space:nowrap;border-top:1px solid var(--filet);border-bottom:1px solid var(--filet);padding:10px 0;color:var(--sourd);font-size:.8125rem}
+.anim-bandeau div{display:inline-block;padding-left:100%;animation:anim-defile 12s linear infinite;font-family:'Geist Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+@keyframes anim-defile{to{transform:translateX(-100%)}}
+.anim-statut{display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--sourd)}
+.anim-pulse{width:10px;height:10px;border-radius:50%;background:var(--hausse);position:relative;flex:none}
+.anim-pulse::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--hausse);animation:anim-ping 1.6s ease-out infinite}
+@keyframes anim-ping{0%{transform:scale(1);opacity:.7}100%{transform:scale(3.2);opacity:0}}
+.anim-titre{font-family:'Instrument Serif',Georgia,serif;font-size:1.25rem}
+.anim-machine{display:inline-block;border-right:2px solid var(--encre);white-space:nowrap;overflow:hidden;width:0;animation:anim-ecrit 2.4s steps(30,end) forwards,anim-cure .8s step-end infinite}
+@keyframes anim-ecrit{to{width:100%}}
+@keyframes anim-cure{50%{border-color:transparent}}
+.anim-flash{padding:12px 14px;border-radius:var(--r-m);font-family:'Geist Mono',ui-monospace,monospace;animation:anim-flash 1.2s ease 2}
+@keyframes anim-flash{0%,100%{background:transparent}40%{background:color-mix(in srgb,var(--hausse) 22%,transparent)}}
+@media (prefers-reduced-motion:reduce){.anim-bandeau div,.anim-pulse::after,.anim-machine,.anim-flash{animation:none}.anim-machine{width:auto;border:0}}
 </style>
 </head>
 <body>
@@ -187,6 +203,12 @@ footer{margin-top:40px;color:var(--sourd);font-size:.8125rem}
       <line class="aig" x1="150" y1="150" x2="150" y2="36" stroke="#ed7940" stroke-width="4" stroke-linecap="round"/>
       <circle cx="150" cy="150" r="7" fill="#262626"/>
     </svg>
+  <section class="anim" aria-label="Animations du relevé">
+    <div class="anim-bandeau" aria-hidden="true"><div>Dollar 0,9412 +0,0063 · Franc suisse 1,0487 −0,0021 · Euro 1,0000 +0,0002 · Livre 1,1638 −0,0054</div></div>
+    <p class="anim-statut"><span class="anim-pulse" aria-hidden="true"></span><span>Marché ouvert, mise à jour en direct</span></p>
+    <p class="anim-titre"><span class="anim-machine">Relevé du jour : Dollar en hausse.</span></p>
+    <p class="anim-flash">Dollar · <span class="hausse">+0,0063</span></p>
+  </section>
     <h1>Dix chiffres. Avant le café.</h1>
     <p class="date mono" id="date">Relevé du 24 oct. · 06:40</p>
     <div class="carnet" id="carnet">
