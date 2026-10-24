@@ -58,6 +58,22 @@ details[open] summary::after{content:"−"}
 details p{color:var(--sourd);padding:4px 0 6px}
 footer{margin-top:48px;color:var(--sourd);font-size:.8125rem;text-align:center}
 @media (prefers-reduced-motion:reduce){.cadran .aig{transition:none}}
+/* animations relevé (repris de 6h40-anim-05/06/07/10) */
+.anim{margin:24px 0;display:grid;gap:12px}
+.anim-bandeau{overflow:hidden;white-space:nowrap;border-top:1px solid var(--filet);border-bottom:1px solid var(--filet);padding:10px 0;color:var(--sourd);font-size:.8125rem}
+.anim-bandeau div{display:inline-block;padding-left:100%;animation:anim-defile 12s linear infinite;font-family:ui-monospace,monospace;font-variant-numeric:tabular-nums}
+@keyframes anim-defile{to{transform:translateX(-100%)}}
+.anim-statut{display:flex;align-items:center;gap:10px;font-size:.875rem;color:var(--sourd)}
+.anim-pulse{width:10px;height:10px;border-radius:50%;background:var(--hausse);position:relative;flex:none}
+.anim-pulse::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--hausse);animation:anim-ping 1.6s ease-out infinite}
+@keyframes anim-ping{0%{transform:scale(1);opacity:.7}100%{transform:scale(3.2);opacity:0}}
+.anim-titre{font-size:1.25rem}
+.anim-machine{display:inline-block;border-right:2px solid var(--encre);white-space:nowrap;overflow:hidden;width:0;animation:anim-ecrit 2.4s steps(30,end) forwards,anim-cure .8s step-end infinite}
+@keyframes anim-ecrit{to{width:100%}}
+@keyframes anim-cure{50%{border-color:transparent}}
+.anim-flash{padding:12px 14px;border-radius:12px;font-family:ui-monospace,monospace;animation:anim-flash 1.2s ease 2}
+@keyframes anim-flash{0%,100%{background:transparent}40%{background:color-mix(in srgb,var(--hausse) 22%,transparent)}}
+@media (prefers-reduced-motion:reduce){.anim-bandeau div,.anim-pulse::after,.anim-machine,.anim-flash{animation:none}.anim-machine{width:auto;border:0}}
 </style>
 </head>
 <body class="js">
@@ -113,6 +129,13 @@ footer{margin-top:48px;color:var(--sourd);font-size:.8125rem;text-align:center}
 <details><summary>Faut-il un compte ?</summary><p>Non. La page marche tout de suite. Seul Pro demande une adresse mail.</p></details>
 <details><summary>D'où viennent les chiffres ?</summary><p>Banque de France et BCE pour les devises, Insee, Pretto, CRE, info.gouv.fr, prix-carburant.eu, Club Patrimoine, Économie Matin.</p></details>
 <details><summary>Comment résilier ?</summary><p>En un clic depuis le reçu. L'accès reste actif jusqu'à la fin du mois payé.</p></details>
+
+<section class="anim" aria-label="Animations du relevé">
+  <div class="anim-bandeau" aria-hidden="true"><div>Dollar 0,9412 +0,0063 · Franc suisse 1,0487 −0,0021 · Euro 1,0000 +0,0002 · Livre 1,1638 −0,0054</div></div>
+  <p class="anim-statut"><span class="anim-pulse" aria-hidden="true"></span><span>Marché ouvert, mise à jour en direct</span></p>
+  <p class="anim-titre"><span class="anim-machine">Relevé du jour : Dollar en hausse.</span></p>
+  <p class="anim-flash">Dollar · <span class="hausse">+0,0063</span></p>
+</section>
 
 <footer>6h40 · Information, pas un conseil financier.</footer>
 </main>
