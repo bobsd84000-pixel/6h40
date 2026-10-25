@@ -1,0 +1,112 @@
+[
+ {
+  "id": "P001",
+  "name": "Hamza",
+  "age": 58,
+  "segment": "Petite agence de courtage, 2 à 5 personnes",
+  "income": 392000,
+  "behaviour": "Débordé",
+  "behaviour_how": "Répond aux messages le soir, n'a pas le temps d'installer un nouvel outil.",
+  "objection": "Mon réseau me fournit déjà des outils",
+  "habit": "tu perds des clients qui partent voir leur banque en direct"
+ },
+ {
+  "id": "P002",
+  "name": "Tomas",
+  "age": 57,
+  "segment": "Courtier indépendant seul (mandataire de réseau)",
+  "income": 51000,
+  "behaviour": "Vit de la recommandation",
+  "behaviour_how": "La moitié de ses clients viennent du bouche-à-oreille, il soigne le suivi.",
+  "objection": "Un abonnement de plus dans mes charges",
+  "habit": "tu envoies les taux du mois à tes clients par mail"
+ },
+ {
+  "id": "P003",
+  "name": "Felix",
+  "age": 37,
+  "segment": "Petite agence de courtage, 2 à 5 personnes",
+  "income": 242000,
+  "behaviour": "Compte chaque abonnement",
+  "behaviour_how": "Paie déjà plusieurs logiciels et cherche à réduire ses charges.",
+  "objection": "Mon réseau me fournit déjà des outils",
+  "habit": "tu envoies les taux du mois à tes clients par mail"
+ },
+ {
+  "id": "P004",
+  "name": "Andre",
+  "age": 31,
+  "segment": "Courtier indépendant seul (mandataire de réseau)",
+  "income": 38000,
+  "behaviour": "Équipé par son réseau",
+  "behaviour_how": "Son réseau de courtage lui fournit déjà un logiciel et des outils marketing.",
+  "objection": "Le taux moyen n'est pas le taux que j'obtiens pour eux",
+  "habit": "tu publies sur LinkedIn le lundi"
+ },
+ {
+  "id": "P005",
+  "name": "Rafael",
+  "age": 34,
+  "segment": "Courtier débutant, moins de 2 ans",
+  "income": 22000,
+  "behaviour": "Vit de la recommandation",
+  "behaviour_how": "La moitié de ses clients viennent du bouche-à-oreille, il soigne le suivi.",
+  "objection": "Mes clients ne veulent pas un message de plus",
+  "habit": "tu relances tes clients en recherche chaque semaine par SMS"
+ },
+ {
+  "id": "P006",
+  "name": "June",
+  "age": 56,
+  "segment": "Courtier indépendant seul (mandataire de réseau)",
+  "income": 59000,
+  "behaviour": "Équipé par son réseau",
+  "behaviour_how": "Son réseau de courtage lui fournit déjà un logiciel et des outils marketing.",
+  "objection": "Un abonnement de plus dans mes charges",
+  "habit": "tu perds des clients qui partent voir leur banque en direct"
+ },
+ {
+  "id": "P007",
+  "name": "Iris",
+  "age": 48,
+  "segment": "Courtier indépendant seul (mandataire de réseau)",
+  "income": 71000,
+  "behaviour": "Vit de la recommandation",
+  "behaviour_how": "La moitié de ses clients viennent du bouche-à-oreille, il soigne le suivi.",
+  "objection": "Un abonnement de plus dans mes charges",
+  "habit": "tu relances tes clients en recherche chaque semaine par SMS"
+ },
+ {
+  "id": "P008",
+  "name": "Isla",
+  "age": 58,
+  "segment": "Courtier indépendant seul (mandataire de réseau)",
+  "income": 48000,
+  "behaviour": "Débordé",
+  "behaviour_how": "Répond aux messages le soir, n'a pas le temps d'installer un nouvel outil.",
+  "objection": "Un abonnement de plus dans mes charges",
+  "habit": "tu perds des clients qui partent voir leur banque en direct"
+ },
+ {
+  "id": "P009",
+  "name": "Kai",
+  "age": 42,
+  "segment": "Petite agence de courtage, 2 à 5 personnes",
+  "income": 337000,
+  "behaviour": "Équipé par son réseau",
+  "behaviour_how": "Son réseau de courtage lui fournit déjà un logiciel et des outils marketing.",
+  "objection": "Je n'ai pas le temps de l'installer",
+  "habit": "tu publies sur LinkedIn le lundi"
+ },
+ {
+  "id": "P010",
+  "name": "Levi",
+  "age": 29,
+  "segment": "Petite agence de courtage, 2 à 5 personnes",
+  "income": 272000,
+  "behaviour": "Fait sa com' sur LinkedIn",
+  "behaviour_how": "Publie les taux chaque semaine sur LinkedIn pour se faire connaître.",
+  "objection": "Risque de conformité si un chiffre est faux (IOBSP, ACPR)",
+  "habit": "tu perds des clients qui partent voir leur banque en direct"
+ }
+]

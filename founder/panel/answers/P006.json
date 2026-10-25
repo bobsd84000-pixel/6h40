@@ -1,0 +1,13 @@
+{
+  "id": "P006",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "need",
+  "reason": "La version gratuite me suffit largement : je regarde déjà mon téléphone au réveil, j'ouvrirais la page et j'aurais mes dix repères avec une alerte. Le mail, les alertes illimitées et les courbes sur 30 jours, j'ai déjà ça gratuitement dans mon appli de courtier pour l'or, le dollar et les taux.",
+  "objection": "Encore un abonnement de plus pour des chiffres que je trouve partout gratuitement. Mon gazole et mon Livret A ne bougent pas assez d'un jour à l'autre pour que je paie pour les suivre chaque matin.",
+  "would_change_my_mind": "Un vrai calcul personnalisé sur mon portefeuille (PEA, ETF) et mon crédit, par exemple une alerte qui me dit quand renégocier mon prêt vaut le coup, avec le gain en euros.",
+  "price_too_cheap": 0.5,
+  "price_cheap": 1,
+  "price_expensive": 3,
+  "price_too_expensive": 5
+}

@@ -1,0 +1,22 @@
+{
+  "business": "6h40 Projet immo (pass 6 mois)",
+  "unit": "pass 6 mois",
+  "price": 12.00,
+  "variable": [
+    {"label": "Lemon Squeezy 5 %", "cost": 0.60},
+    {"label": "Lemon Squeezy 0,50 $ fixe (≈0,46 €)", "cost": 0.46},
+    {"label": "Notifications + mails (offerts dans les paliers gratuits)", "cost": 0.00}
+  ],
+  "fixed_monthly": [
+    {"label": "Hébergement Vercel Pro, usage commercial (estimation ≈20 €)", "cost": 20},
+    {"label": "Nom de domaine (estimation ≈12 €/an)", "cost": 1},
+    {"label": "Supabase + Resend (paliers gratuits)", "cost": 0}
+  ],
+  "startup": [
+    {"label": "App déjà construite", "cost": 0},
+    {"label": "Petit test payant pour mesurer l'intérêt (estimation)", "cost": 50}
+  ],
+  "days_per_month": 30,
+  "plan_per_day": 1,
+  "ramp_per_day": [0.05, 0.1, 0.15, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+}

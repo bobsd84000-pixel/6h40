@@ -1,0 +1,13 @@
+{
+  "id": "P006",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "habit",
+  "reason": "Mon réseau me fournit déjà le logiciel et les outils marketing, je ne vais pas empiler un abonnement de plus à côté. L'idée de rappeler le client au bon moment me parle, mais un SMS de capacité chaque matin ne l'empêchera pas d'aller voir sa banque.",
+  "objection": "Encore 29 € de charges fixes pour un outil hors de mon réseau, à ressaisir chaque client à la main, sans savoir si mon réseau l'accepte avec mon logo dessus.",
+  "would_change_my_mind": "Que mon réseau l'intègre ou le recommande, branché sur mon logiciel actuel sans double saisie.",
+  "price_too_cheap": 5,
+  "price_cheap": 10,
+  "price_expensive": 20,
+  "price_too_expensive": 35
+}

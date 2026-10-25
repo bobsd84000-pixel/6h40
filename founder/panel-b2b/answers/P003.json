@@ -1,0 +1,13 @@
+{
+  "id": "P003",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "habit",
+  "reason": "Mon réseau me fournit déjà des outils et mon mail mensuel des taux fait le job. Je cherche à couper des abonnements, pas à en rajouter un pour un recalcul quotidien que mes clients ne demandent pas.",
+  "objection": "Un taux moyen du jour, ça ne bouge pas assez pour justifier un message chaque matin ; mes clients vont se lasser ou croire que c'est une offre, et c'est encore 29 € de plus qui tombent chaque mois.",
+  "would_change_my_mind": "Que ça me ramène des dossiers signés de façon prouvée, ou que ce soit intégré gratuitement par mon réseau.",
+  "price_too_cheap": 3,
+  "price_cheap": 9,
+  "price_expensive": 19,
+  "price_too_expensive": 29
+}

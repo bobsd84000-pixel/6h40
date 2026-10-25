@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6h40 — verdict Founder</title>
+<style>
+:root{--fond:#070707;--carte:#0f0f0f;--filet:#262626;--encre:#d1d1d1;--vif:#e4e4e4;--sourd:#8f8f8f;--aiguille:#ed7940;--hausse:#7cd591;--baisse:#f78955;--r:14px}
+*{box-sizing:border-box;margin:0}
+body{background:var(--fond);color:var(--encre);font:400 1rem/1.5 system-ui,sans-serif;padding:24px 16px 48px}
+main{max-width:600px;margin:0 auto}
+.mono{font-family:ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.etiquette{color:var(--aiguille);font-size:.8125rem;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:clamp(2rem,8vw,2.8rem);font-weight:500;line-height:1.05;margin:8px 0 10px;color:var(--vif)}
+h2{font-size:1.25rem;font-weight:500;margin:36px 0 12px;color:var(--vif)}
+p{color:var(--encre)}
+.sourd{color:var(--sourd);font-size:.9375rem}
+.bord{background:var(--carte);border:1px solid var(--filet);border-radius:var(--r);overflow:hidden}
+.l{display:grid;grid-template-columns:1fr auto;gap:12px;padding:14px 16px;border-top:1px solid var(--filet);align-items:center}
+.l:first-child{border-top:0}
+.l small{display:block;color:var(--sourd);font-size:.8125rem}
+.non{color:var(--baisse)}.oui{color:var(--hausse)}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.trio div{background:var(--carte);border:1px solid var(--filet);border-radius:var(--r);padding:14px 12px}
+.trio b{display:block;font-size:1.4rem;font-weight:500;color:var(--vif)}
+.trio span{color:var(--sourd);font-size:.8125rem}
+ul{padding-left:1.1em}li{margin:6px 0}
+.action{border:1px solid var(--aiguille);border-radius:var(--r);padding:16px;margin-top:12px}
+.action b{color:var(--aiguille)}
+footer{margin-top:40px;color:var(--sourd);font-size:.8125rem}
+</style>
+</head>
+<body>
+<main>
+<div class="etiquette">Founder · 11 étapes · 25 oct. 2026</div>
+<h1>Verdict : pas encore.</h1>
+<p>La page gratuite est utile. Aucune offre payante testée ne se vend : <b class="mono">0</b> acheteur simulé sur <b class="mono">30</b>.</p>
+
+<h2>La cible</h2>
+<div class="bord">
+<div class="l"><div>Utilisateurs (gratuit)<small>Primo-accédants 28-40 ans en recherche de logement</small></div><span class="oui">retenue</span></div>
+<div class="l"><div>Payeurs (à tester en vrai)<small>Courtiers en crédit immo indépendants</small></div><span class="sourd">hypothèse</span></div>
+</div>
+
+<h2>Les 3 offres testées</h2>
+<div class="bord">
+<div class="l"><div>Pro · 4 €/mois<small>Grand public · « le gratuit me suffit »</small></div><span class="mono non">0/10</span></div>
+<div class="l"><div>Projet immo · 12 € / 6 mois<small>Primo-accédants · « mon courtier le fait déjà »</small></div><span class="mono non">0/10</span></div>
+<div class="l"><div>Courtier · 29 €/mois<small>Courtiers · « pas d'envoi auto à mes clients, pas de ressaisie »</small></div><span class="mono non">0/10</span></div>
+</div>
+<p class="sourd" style="margin-top:10px">En v2 et v3, le prix était dans la fourchette acceptée : c'est le besoin qui manque, pas le prix.</p>
+
+<h2>Les chiffres</h2>
+<div class="trio">
+<div><b class="mono">91 %</b><span>marge par vente</span></div>
+<div><b class="mono">≈2</b><span>ventes/mois pour être rentable</span></div>
+<div><b class="mono">&lt;100 €</b><span>cash nécessaire</span></div>
+</div>
+<p class="sourd" style="margin-top:10px">Année 1 : +1 619 € si les ventes suivent l'hypothèse, −300 € si elles restent à zéro.</p>
+
+<h2>Concurrence</h2>
+<ul>
+<li>Les chiffres sont gratuits partout (banques, Investing.com, Pretto).</li>
+<li>Payant : de 4,99 € (Essence&amp;CO) à 12,50-24,99 €/mois (Finary).</li>
+<li>Créneau libre : « traduit pour mon budget, sans effort ». Personne d'autre ne l'occupe.</li>
+</ul>
+
+<h2>Décision</h2>
+<div class="action">
+<p><b>Ne plus coder de fonctions payantes.</b> Garder 6h40 gratuit et tester une seule offre en réel : <b>« 6h40 Alerte courtier », 15 €/mois</b>. L'alerte va au courtier seul, rien n'est envoyé à ses clients.</p>
+<p style="margin-top:10px">Du 2 au 15 novembre : page de pré-vente envoyée à 20 courtiers sur LinkedIn. <span class="mono">≥3</span> inscrits avec un appel accepté = on construit. <span class="mono">&lt;2</span> = on arrête le payant.</p>
+</div>
+
+<footer>Acheteurs simulés et chiffres projetés : à confirmer avec de vrais clients. Information, pas un conseil financier ni juridique. Détail complet : dossier <span class="mono">founder/</span> du dépôt.</footer>
+</main>
+</body>
+</html>

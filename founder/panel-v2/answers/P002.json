@@ -1,0 +1,13 @@
+{
+  "id": "P002",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "need",
+  "reason": "Moi je refais mes calculs à chaque visite avec un prix différent, pas sur un projet figé que je rentre une fois ; et pour une notif quand ma mensualité bouge de 10 €, un simulateur gratuit le dimanche soir me suffit. Je prendrais peut-être les 14 jours gratuits pour avoir la fiche avant le rendez-vous banque, mais je ne paierais pas après.",
+  "objection": "C'est la banque qui décide de ce que je peux emprunter, pas un baromètre : leur fiche ne remplacera pas leur propre calcul, et les simulateurs de prêt sont gratuits partout.",
+  "would_change_my_mind": "Pouvoir comparer plusieurs biens visités dans la même appli, avec une fiche par bien que mon courtier ou ma banque accepte vraiment comme base de discussion.",
+  "price_too_cheap": 2,
+  "price_cheap": 5,
+  "price_expensive": 15,
+  "price_too_expensive": 25
+}

@@ -1,0 +1,13 @@
+{
+  "id": "P005",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "need",
+  "reason": "Mon courtier refait déjà ma capacité d'emprunt et ma mensualité à chaque fois que je lui envoie un bien, et c'est son taux à lui qui compte, pas un taux moyen. Je testerais peut-être les 14 jours gratuits, mais je ne vois pas pourquoi je paierais ensuite.",
+  "objection": "Un taux moyen du baromètre, ce n'est pas le taux que ma banque va me donner. Une notif parce que ma mensualité bouge de 10 € ne change rien à mes visites du samedi, et mon courtier ne va pas prendre au sérieux une fiche sortie d'une appli.",
+  "would_change_my_mind": "Que mon courtier me dise que la fiche d'une page lui fait gagner du temps sur mon dossier, ou que l'outil calcule tout seul, pour chaque annonce que je regarde le soir, si je peux me la payer.",
+  "price_too_cheap": 2,
+  "price_cheap": 5,
+  "price_expensive": 15,
+  "price_too_expensive": 25
+}

@@ -1,0 +1,13 @@
+{
+  "id": "P008",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "price",
+  "reason": "La version gratuite me donne déjà l'essentiel : les dix repères, ma mensualité si j'emprunte et une alerte sur le gazole. Je n'ai pas besoin de payer 4 € par mois pour recevoir par mail ce que je peux regarder gratuitement en deux clics.",
+  "objection": "Encore un abonnement de plus, pour des chiffres que je trouve gratuitement ailleurs. La courbe sur 30 jours et les alertes illimitées, c'est sympa mais pas indispensable pour mon budget.",
+  "would_change_my_mind": "Un vrai suivi de mon projet immobilier : alerte quand les taux de crédit baissent assez pour changer ma capacité d'emprunt, avec un calcul précis sur mon dossier.",
+  "price_too_cheap": 0.5,
+  "price_cheap": 1,
+  "price_expensive": 2.5,
+  "price_too_expensive": 4
+}

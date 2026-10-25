@@ -1,0 +1,13 @@
+{
+  "id": "P010",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "need",
+  "reason": "La version gratuite me suffit largement : une alerte sur le gazole et un coup d'œil de temps en temps quand j'y pense. Je ne vais pas payer 4 € par mois pour un mail que je survolerai dans le métro comme les titres de l'actu.",
+  "objection": "Ces chiffres, je les trouve gratuitement partout, et mon Livret A ou ma mensualité ne bougent pas d'un jour à l'autre. Un relevé quotidien, pour moi, c'est du bruit, pas un besoin.",
+  "would_change_my_mind": "Si la version gratuite devenait vraiment limitée et qu'on me prouvait que les alertes m'ont fait économiser plus de 4 € par mois, par exemple sur le plein ou une renégociation de crédit.",
+  "price_too_cheap": 0.5,
+  "price_cheap": 1,
+  "price_expensive": 2.5,
+  "price_too_expensive": 4
+}

@@ -1,0 +1,13 @@
+{
+  "id": "P003",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "need",
+  "reason": "Je refais mes calculs sur le simulateur de la banque ou de Pretto quand j'en ai besoin, avant une visite ou un rendez-vous, ça me prend deux minutes et c'est gratuit. Une notif chaque fois que ma mensualité bouge de 10 €, franchement ça ne change rien à ce que je fais le samedi.",
+  "objection": "Le chiffre qui compte, c'est celui que ma banque ou mon courtier me donnera avec mon vrai dossier, pas une moyenne Pretto recalculée tous les matins. Ta fiche, le banquier va la regarder deux secondes et refaire son calcul.",
+  "would_change_my_mind": "Si un courtier ou ma banque me disait que la fiche avec l'historique sur 6 mois accélère vraiment mon dossier ou m'aide à négocier le taux.",
+  "price_too_cheap": 2,
+  "price_cheap": 5,
+  "price_expensive": 15,
+  "price_too_expensive": 25
+}

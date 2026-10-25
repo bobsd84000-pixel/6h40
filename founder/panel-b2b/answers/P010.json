@@ -1,0 +1,13 @@
+{
+  "id": "P010",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "trust",
+  "reason": "Le problème est réel, je perds des clients qui filent à leur banque, et 29 € c'est rien pour moi. Mais envoyer tous les matins à mes clients, sous mon nom et mon logo, des chiffres de crédit calculés automatiquement, c'est moi qui porte le risque devant l'ACPR si un seul chiffre ou une seule mention est faux.",
+  "objection": "Un taux moyen du jour, ce n'est pas le taux que je négocie : si le client voit une mensualité qui ne colle pas à l'offre finale, ou si le message n'a pas toutes les mentions obligatoires d'une pub crédit, c'est mon statut IOBSP qui est en jeu, pas celui de l'éditeur. Et un message tous les jours, j'ai peur que ça saoule les clients.",
+  "would_change_my_mind": "Une validation écrite de la conformité des messages (mentions obligatoires IOBSP/pub crédit) par un juriste ou un organisme reconnu, avec l'éditeur qui en assume la responsabilité contractuellement.",
+  "price_too_cheap": 5,
+  "price_cheap": 15,
+  "price_expensive": 59,
+  "price_too_expensive": 120
+}

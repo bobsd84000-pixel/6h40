@@ -1,0 +1,112 @@
+[
+ {
+  "id": "P001",
+  "name": "Hamza",
+  "age": 35,
+  "segment": "Primo-accédant avec courtier déjà contacté",
+  "income": 43000,
+  "behaviour": "Compare avant d'acheter",
+  "behaviour_how": "Cherche toujours la version gratuite avant de payer.",
+  "objection": "Encore un abonnement de plus",
+  "habit": "tu regardes les annonces sur ton téléphone le soir"
+ },
+ {
+  "id": "P002",
+  "name": "Tomas",
+  "age": 39,
+  "segment": "Couple primo-accédant, deux salaires",
+  "income": 74000,
+  "behaviour": "Visite chaque week-end",
+  "behaviour_how": "Fait deux ou trois visites par samedi et refait ses calculs à chaque fois.",
+  "objection": "Les simulateurs de prêt sont gratuits partout",
+  "habit": "tu as rendez-vous avec ta banque le mois prochain"
+ },
+ {
+  "id": "P003",
+  "name": "Felix",
+  "age": 34,
+  "segment": "Primo-accédant seul",
+  "income": 39000,
+  "behaviour": "Utilise les simulateurs gratuits",
+  "behaviour_how": "Utilise les simulateurs des banques et des courtiers en ligne.",
+  "objection": "Les simulateurs de prêt sont gratuits partout",
+  "habit": "tu visites des appartements le samedi"
+ },
+ {
+  "id": "P004",
+  "name": "Andre",
+  "age": 29,
+  "segment": "Couple primo-accédant, deux salaires",
+  "income": 61000,
+  "behaviour": "Allergique aux abonnements",
+  "behaviour_how": "Résilie tout ce qui n'est pas indispensable, compte chaque euro récurrent.",
+  "objection": "Encore un abonnement de plus",
+  "habit": "tu mets de côté chaque mois pour l'apport"
+ },
+ {
+  "id": "P005",
+  "name": "Rafael",
+  "age": 31,
+  "segment": "Primo-accédant avec courtier déjà contacté",
+  "income": 43000,
+  "behaviour": "Visite chaque week-end",
+  "behaviour_how": "Fait deux ou trois visites par samedi et refait ses calculs à chaque fois.",
+  "objection": "Mon courtier fait déjà ces calculs",
+  "habit": "tu regardes les annonces sur ton téléphone le soir"
+ },
+ {
+  "id": "P006",
+  "name": "June",
+  "age": 36,
+  "segment": "Couple primo-accédant, deux salaires",
+  "income": 67000,
+  "behaviour": "Allergique aux abonnements",
+  "behaviour_how": "Résilie tout ce qui n'est pas indispensable, compte chaque euro récurrent.",
+  "objection": "Encore un abonnement de plus",
+  "habit": "tu regardes les annonces sur ton téléphone le soir"
+ },
+ {
+  "id": "P007",
+  "name": "Iris",
+  "age": 39,
+  "segment": "Couple primo-accédant, deux salaires",
+  "income": 85000,
+  "behaviour": "Visite chaque week-end",
+  "behaviour_how": "Fait deux ou trois visites par samedi et refait ses calculs à chaque fois.",
+  "objection": "Mon courtier fait déjà ces calculs",
+  "habit": "tu as rendez-vous avec ta banque le mois prochain"
+ },
+ {
+  "id": "P008",
+  "name": "Isla",
+  "age": 28,
+  "segment": "Couple primo-accédant, deux salaires",
+  "income": 77000,
+  "behaviour": "Fait confiance à son courtier",
+  "behaviour_how": "Laisse le courtier ou la banque faire les calculs.",
+  "objection": "Qui est derrière, est-ce fiable ?",
+  "habit": "tu mets de côté chaque mois pour l'apport"
+ },
+ {
+  "id": "P009",
+  "name": "Kai",
+  "age": 37,
+  "segment": "Primo-accédant seul",
+  "income": 39000,
+  "behaviour": "Fait confiance à son courtier",
+  "behaviour_how": "Laisse le courtier ou la banque faire les calculs.",
+  "objection": "Les simulateurs de prêt sont gratuits partout",
+  "habit": "tu as déjà fait trois simulations de prêt en ligne"
+ },
+ {
+  "id": "P010",
+  "name": "Levi",
+  "age": 37,
+  "segment": "Primo-accédant seul",
+  "income": 37000,
+  "behaviour": "Stressé par la hausse des taux",
+  "behaviour_how": "Suit les taux chaque semaine et a peur de rater le bon moment.",
+  "objection": "Les simulateurs de prêt sont gratuits partout",
+  "habit": "tu as déjà fait trois simulations de prêt en ligne"
+ }
+]

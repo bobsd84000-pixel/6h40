@@ -1,0 +1,13 @@
+{
+  "id": "P001",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "convenience",
+  "reason": "Je réponds déjà à mes messages le soir, je n'ai pas le temps de ressaisir 50 dossiers dans un outil de plus. Et mon réseau me fournit déjà des simulateurs, je ne vais pas payer en double.",
+  "objection": "Ressaisir chaque client à la main, c'est des heures que je n'ai pas. Et un SMS tous les matins à 6h40, j'ai peur que mes clients le prennent pour du spam ou qu'ils comparent avec la banque sur un taux moyen qui ne correspond pas à leur vrai dossier.",
+  "would_change_my_mind": "Que ça se branche tout seul sur le logiciel de mon réseau, sans ressaisie, et qu'un confrère me montre qu'il a récupéré des clients qui partaient à la banque.",
+  "price_too_cheap": 5,
+  "price_cheap": 15,
+  "price_expensive": 39,
+  "price_too_expensive": 60
+}

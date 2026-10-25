@@ -1,0 +1,96 @@
+{
+ "n": 30,
+ "seed": 918553,
+ "customer": {
+  "business": "6h40, page web qui donne chaque matin dix repères économiques traduits en euros pour son budget",
+  "target": "Actifs français de 28 à 45 ans avec une voiture, une épargne et un projet ou un crédit immobilier, qui veulent savoir en 30 secondes ce que l'économie change pour leur budget (revenus en euros par an)",
+  "where": "France, en ligne, sur téléphone",
+  "age": [
+   28,
+   45
+  ],
+  "segments": [
+   {
+    "name": "Futur acheteur immobilier (primo-accédant)",
+    "share": 0.35,
+    "income": [
+     32000,
+     70000
+    ]
+   },
+   {
+    "name": "Navetteur qui fait 1 000 km par mois en voiture",
+    "share": 0.3,
+    "income": [
+     24000,
+     45000
+    ]
+   },
+   {
+    "name": "Épargnant prudent (Livret A, assurance-vie)",
+    "share": 0.2,
+    "income": [
+     28000,
+     60000
+    ]
+   },
+   {
+    "name": "Petit investisseur curieux (PEA, ETF)",
+    "share": 0.15,
+    "income": [
+     40000,
+     90000
+    ]
+   }
+  ],
+  "behaviours": [
+   {
+    "name": "Regarde son téléphone au réveil",
+    "share": 0.25,
+    "how": "Consulte météo, mails et actu dans les 10 minutes après le réveil."
+   },
+   {
+    "name": "Allergique aux abonnements",
+    "share": 0.2,
+    "how": "Résilie tout ce qui n'est pas indispensable, compte chaque euro récurrent."
+   },
+   {
+    "name": "Lit déjà une newsletter éco",
+    "share": 0.15,
+    "how": "Abonné à une newsletter gratuite de finances perso, la lit en diagonale."
+   },
+   {
+    "name": "Compare avant d'acheter",
+    "share": 0.15,
+    "how": "Cherche toujours la version gratuite avant de payer."
+   },
+   {
+    "name": "Stressé par le pouvoir d'achat",
+    "share": 0.15,
+    "how": "Suit le prix du plein et des factures, en parle souvent."
+   },
+   {
+    "name": "Utilise déjà l'appli de sa banque",
+    "share": 0.1,
+    "how": "Fait tout dans l'appli de sa banque en ligne, alertes comprises."
+   }
+  ],
+  "objections": [
+   "Ces chiffres sont gratuits partout, pourquoi payer ?",
+   "Encore un abonnement de plus",
+   "Je ne vais pas ouvrir ça tous les matins",
+   "Qui est derrière, est-ce fiable ?",
+   "La version gratuite me suffit",
+   "Un mail de plus dans ma boîte, non merci",
+   "Ça ne me dit pas quoi faire concrètement"
+  ],
+  "habits": [
+   "tu prends la voiture pour aller au travail",
+   "tu visites des appartements le samedi",
+   "tu chauffes ton logement au gaz",
+   "tu mets 200 euros de côté chaque mois sur ton Livret A",
+   "tu lis les titres de l'actu dans le métro"
+  ]
+ },
+ "pitch": "6h40 : une page web qui affiche chaque matin dix repères économiques (dollar, pétrole, or, taux 10 ans, gazole, gaz, inflation, crédit immo, Livret A, livre sterling), mis à jour à 6 h 40.\nElle les traduit en euros pour ton budget : ce que coûtent ton plein et ton chauffage ce mois-ci, ce que ton Livret A perd face à l'inflation, ta mensualité si tu empruntes.\nGratuit, sans compte, avec 1 alerte (par exemple : prévenir si le gazole passe sous 2,30 €).\n6h40 Pro, 4 € par mois : le relevé dans ta boîte mail chaque matin à 6 h 40, alertes illimitées vérifiées même page fermée, courbe sur 30 jours pour chaque repère. Résiliable en un clic, sans engagement.\nLa question : est-ce que tu prends 6h40 Pro à 4 € par mois ?"
+}

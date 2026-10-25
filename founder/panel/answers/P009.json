@@ -1,0 +1,13 @@
+{
+  "id": "P009",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "need",
+  "reason": "La page gratuite avec une alerte me suffit largement : je regarderai le taux du crédit immo et le Livret A de temps en temps, pas besoin d'un mail tous les matins. J'ai déjà une newsletter que je lis en diagonale, je ne vais pas payer pour une deuxième.",
+  "objection": "Encore un abonnement de plus pour des chiffres que je peux trouver gratuitement, et qui ne bougent pas assez chaque jour pour changer quoi que ce soit à mon budget.",
+  "would_change_my_mind": "Au moment où je signe mon prêt, une alerte vraiment utile sur les taux de crédit immo qui me fait gagner de l'argent concret, ou un essai gratuit d'un mois pour voir si je l'ouvre vraiment.",
+  "price_too_cheap": 0.5,
+  "price_cheap": 1,
+  "price_expensive": 2.5,
+  "price_too_expensive": 4
+}

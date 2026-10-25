@@ -1,0 +1,87 @@
+{
+ "n": 10,
+ "seed": 918553,
+ "customer": {
+  "business": "6h40 Projet immo, suivi quotidien de sa capacité d'emprunt et de sa mensualité",
+  "target": "Primo-accédants français de 28 à 40 ans en recherche active d'un logement (visites en cours, dossier de prêt à monter dans les 6 mois), revenus en euros par an",
+  "where": "France, en ligne, sur téléphone",
+  "age": [
+   28,
+   40
+  ],
+  "segments": [
+   {
+    "name": "Couple primo-accédant, deux salaires",
+    "share": 0.45,
+    "income": [
+     45000,
+     90000
+    ]
+   },
+   {
+    "name": "Primo-accédant seul",
+    "share": 0.35,
+    "income": [
+     28000,
+     50000
+    ]
+   },
+   {
+    "name": "Primo-accédant avec courtier déjà contacté",
+    "share": 0.2,
+    "income": [
+     40000,
+     80000
+    ]
+   }
+  ],
+  "behaviours": [
+   {
+    "name": "Visite chaque week-end",
+    "share": 0.25,
+    "how": "Fait deux ou trois visites par samedi et refait ses calculs à chaque fois."
+   },
+   {
+    "name": "Allergique aux abonnements",
+    "share": 0.2,
+    "how": "Résilie tout ce qui n'est pas indispensable, compte chaque euro récurrent."
+   },
+   {
+    "name": "Fait confiance à son courtier",
+    "share": 0.15,
+    "how": "Laisse le courtier ou la banque faire les calculs."
+   },
+   {
+    "name": "Compare avant d'acheter",
+    "share": 0.15,
+    "how": "Cherche toujours la version gratuite avant de payer."
+   },
+   {
+    "name": "Stressé par la hausse des taux",
+    "share": 0.15,
+    "how": "Suit les taux chaque semaine et a peur de rater le bon moment."
+   },
+   {
+    "name": "Utilise les simulateurs gratuits",
+    "share": 0.1,
+    "how": "Utilise les simulateurs des banques et des courtiers en ligne."
+   }
+  ],
+  "objections": [
+   "Les simulateurs de prêt sont gratuits partout",
+   "Mon courtier fait déjà ces calculs",
+   "Encore un abonnement de plus",
+   "Qui est derrière, est-ce fiable ?",
+   "Les taux ne bougent pas tous les jours",
+   "Ça ne me dit pas quoi faire concrètement"
+  ],
+  "habits": [
+   "tu visites des appartements le samedi",
+   "tu regardes les annonces sur ton téléphone le soir",
+   "tu as rendez-vous avec ta banque le mois prochain",
+   "tu mets de côté chaque mois pour l'apport",
+   "tu as déjà fait trois simulations de prêt en ligne"
+  ]
+ },
+ "pitch": "6h40 Projet immo : tu entres une fois ton projet (prix visé, apport, revenus, durée). Chaque matin à 6 h 40, ta capacité d'emprunt et ta mensualité sont recalculées avec le taux moyen du jour (baromètre Pretto) et le taux de l'État à 10 ans.\nUne notification sur ton téléphone (pas un mail) quand ta mensualité bouge de plus de 10 € ou ta capacité d'emprunt de plus de 5 000 €, avec la raison en une phrase.\nUne fiche d'une page à montrer à ta banque ou à ton courtier : ton projet, le taux du jour, ce que tu peux emprunter, l'historique sur 6 mois.\nLes sources de chaque chiffre sont citées, et la page « qui fait 6h40 » dit qui est derrière.\nPrix : 12 € pour 6 mois, en une fois, pas d'abonnement, pas de renouvellement automatique. 14 jours gratuits pour essayer, sans carte bancaire.\nLa page du matin avec les dix repères reste gratuite, sans compte.\nLa question : est-ce que tu prends 6h40 Projet immo à 12 € pour 6 mois ?"
+}

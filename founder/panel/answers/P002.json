@@ -1,0 +1,13 @@
+{
+  "id": "P002",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "need",
+  "reason": "La version gratuite me suffit : je mets une alerte sur le gazole et je jette un œil à la page de temps en temps. Payer 4 € par mois pour recevoir un mail de plus chaque matin, c'est justement ce que je ne veux pas.",
+  "objection": "Ce que je paierais, c'est surtout le mail quotidien, et ma boîte est déjà pleine. Le prix du plein, je le vois à la pompe. Mon Livret A ne bouge pas d'un jour à l'autre, alors une courbe sur 30 jours ne change rien à ce que je fais.",
+  "would_change_my_mind": "Une alerte qui me fasse vraiment économiser de l'argent, par exemple la station la moins chère sur mon trajet quand le gazole baisse, et qui rembourse clairement les 4 € chaque mois.",
+  "price_too_cheap": 0.5,
+  "price_cheap": 1,
+  "price_expensive": 2.5,
+  "price_too_expensive": 4
+}

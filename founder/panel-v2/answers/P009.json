@@ -1,0 +1,13 @@
+{
+  "id": "P009",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "habit",
+  "reason": "J'ai déjà fait trois simulations gratuites et c'est mon courtier qui fait les calculs et négocie le taux. Recalculer ma capacité chaque matin avec un taux moyen ne change rien à ce que la banque va vraiment me proposer.",
+  "objection": "Les simulateurs sont gratuits partout et mon courtier me donne le vrai chiffre ; une fiche faite à partir d'un taux moyen, la banque ne va pas s'en servir.",
+  "would_change_my_mind": "Que mon courtier me dise que la fiche lui fait gagner du temps ou m'aide à négocier, ou que je fasse l'essai gratuit de 14 jours et qu'une alerte m'aide vraiment à choisir le moment de signer.",
+  "price_too_cheap": 2,
+  "price_cheap": 5,
+  "price_expensive": 10,
+  "price_too_expensive": 15
+}

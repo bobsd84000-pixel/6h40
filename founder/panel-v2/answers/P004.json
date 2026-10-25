@@ -1,0 +1,13 @@
+{
+  "id": "P004",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "need",
+  "reason": "Ma capacité d'emprunt, je la recalcule en deux minutes sur un simulateur gratuit quand j'en ai besoin, et mon courtier me donnera le vrai taux de toute façon. Je testerais peut-être les 14 jours gratuits, mais je ne vois pas pourquoi je paierais pour savoir chaque matin que ma mensualité a bougé de 12 €.",
+  "objection": "Le taux du jour d'un baromètre, ce n'est pas le taux que MA banque va me proposer ; la fiche ne remplacera pas le dossier du courtier, donc je paie pour une info que j'ai déjà gratuitement, y compris sur leur propre page du matin.",
+  "would_change_my_mind": "Que la fiche soit réellement acceptée et utile pour un courtier ou une banque, par exemple si mon courtier me dit qu'elle lui fait gagner du temps ou m'aide à négocier.",
+  "price_too_cheap": 2,
+  "price_cheap": 5,
+  "price_expensive": 15,
+  "price_too_expensive": 25
+}

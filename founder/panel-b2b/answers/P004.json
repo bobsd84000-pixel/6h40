@@ -1,0 +1,13 @@
+{
+  "id": "P004",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "need",
+  "reason": "Mon réseau me fournit déjà le logiciel et les outils marketing, je ne vais pas payer un outil de plus pour ça. Et envoyer tous les matins à mes clients un taux moyen qui n'est pas celui que je leur obtiens, ça risque de me compliquer la vie plus qu'autre chose.",
+  "objection": "Le taux moyen n'est pas le taux que j'obtiens pour eux : si le client voit un chiffre chaque matin et que mon offre réelle est différente, c'est moi qui dois me justifier, mention « estimation » ou pas.",
+  "would_change_my_mind": "Pouvoir y mettre mes propres taux négociés par banque et par profil à la place du taux moyen, et que ce soit intégré ou validé par mon réseau.",
+  "price_too_cheap": 5,
+  "price_cheap": 10,
+  "price_expensive": 20,
+  "price_too_expensive": 35
+}

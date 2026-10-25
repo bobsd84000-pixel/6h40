@@ -1,0 +1,13 @@
+{
+  "id": "P004",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "habit",
+  "reason": "Le truc principal du Pro, c'est un mail chaque matin, et c'est exactement ce que je ne veux pas : je gère tout dans l'appli de ma banque, alertes comprises. La page gratuite avec une alerte gazole me suffit largement pour mon plein.",
+  "objection": "Un mail de plus dans ma boîte que je n'ouvrirai pas, et payer 4 € par mois pour des chiffres que je peux voir gratuitement sur la page.",
+  "would_change_my_mind": "Des alertes en notification push sur mon téléphone (pas par mail) qui me disent concrètement quand faire le plein ou que les taux immo bougent pendant que je cherche un appart.",
+  "price_too_cheap": 0.5,
+  "price_cheap": 1,
+  "price_expensive": 2.5,
+  "price_too_expensive": 4
+}

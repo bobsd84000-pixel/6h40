@@ -1,0 +1,13 @@
+{
+  "id": "P007",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "need",
+  "reason": "Je ne vais pas ouvrir ça tous les matins, et le mail à 6 h 40 finira avec les newsletters que je ne lis pas. La version gratuite avec une alerte sur le gazole me suffit : c'est le seul chiffre qui touche vraiment mon budget chaque semaine.",
+  "objection": "4 € par mois, c'est 48 € par an pour des chiffres que je trouve déjà gratuitement sur l'appli de la station ou à la radio, alors que je compte chaque euro.",
+  "would_change_my_mind": "Qu'on me montre concrètement que les alertes me font économiser plus de 4 € par mois sur le plein, par exemple en m'indiquant la station la moins chère sur mon trajet.",
+  "price_too_cheap": 0.5,
+  "price_cheap": 1,
+  "price_expensive": 2.5,
+  "price_too_expensive": 4
+}

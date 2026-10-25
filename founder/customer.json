@@ -1,0 +1,34 @@
+{
+  "business": "6h40 Projet immo, suivi quotidien de sa capacité d'emprunt et de sa mensualité",
+  "target": "Primo-accédants français de 28 à 40 ans en recherche active d'un logement (visites en cours, dossier de prêt à monter dans les 6 mois), revenus en euros par an",
+  "where": "France, en ligne, sur téléphone",
+  "age": [28, 40],
+  "segments": [
+    {"name": "Couple primo-accédant, deux salaires", "share": 0.45, "income": [45000, 90000]},
+    {"name": "Primo-accédant seul", "share": 0.35, "income": [28000, 50000]},
+    {"name": "Primo-accédant avec courtier déjà contacté", "share": 0.20, "income": [40000, 80000]}
+  ],
+  "behaviours": [
+    {"name": "Visite chaque week-end", "share": 0.25, "how": "Fait deux ou trois visites par samedi et refait ses calculs à chaque fois."},
+    {"name": "Allergique aux abonnements", "share": 0.20, "how": "Résilie tout ce qui n'est pas indispensable, compte chaque euro récurrent."},
+    {"name": "Fait confiance à son courtier", "share": 0.15, "how": "Laisse le courtier ou la banque faire les calculs."},
+    {"name": "Compare avant d'acheter", "share": 0.15, "how": "Cherche toujours la version gratuite avant de payer."},
+    {"name": "Stressé par la hausse des taux", "share": 0.15, "how": "Suit les taux chaque semaine et a peur de rater le bon moment."},
+    {"name": "Utilise les simulateurs gratuits", "share": 0.10, "how": "Utilise les simulateurs des banques et des courtiers en ligne."}
+  ],
+  "objections": [
+    "Les simulateurs de prêt sont gratuits partout",
+    "Mon courtier fait déjà ces calculs",
+    "Encore un abonnement de plus",
+    "Qui est derrière, est-ce fiable ?",
+    "Les taux ne bougent pas tous les jours",
+    "Ça ne me dit pas quoi faire concrètement"
+  ],
+  "habits": [
+    "tu visites des appartements le samedi",
+    "tu regardes les annonces sur ton téléphone le soir",
+    "tu as rendez-vous avec ta banque le mois prochain",
+    "tu mets de côté chaque mois pour l'apport",
+    "tu as déjà fait trois simulations de prêt en ligne"
+  ]
+}

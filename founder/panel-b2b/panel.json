@@ -1,0 +1,81 @@
+{
+ "n": 10,
+ "seed": 918553,
+ "customer": {
+  "business": "6h40 Courtier, relevé du matin envoyé par le courtier à ses clients en recherche de logement",
+  "target": "Courtiers en crédit immobilier en France, indépendants ou en petite agence (1 à 5 personnes), qui suivent 20 à 80 dossiers de primo-accédants à la fois (chiffre d'affaires en euros par an)",
+  "where": "France, en ligne",
+  "age": [
+   28,
+   58
+  ],
+  "segments": [
+   {
+    "name": "Courtier indépendant seul (mandataire de réseau)",
+    "share": 0.5,
+    "income": [
+     35000,
+     80000
+    ]
+   },
+   {
+    "name": "Petite agence de courtage, 2 à 5 personnes",
+    "share": 0.35,
+    "income": [
+     120000,
+     400000
+    ]
+   },
+   {
+    "name": "Courtier débutant, moins de 2 ans",
+    "share": 0.15,
+    "income": [
+     20000,
+     45000
+    ]
+   }
+  ],
+  "behaviours": [
+   {
+    "name": "Vit de la recommandation",
+    "share": 0.25,
+    "how": "La moitié de ses clients viennent du bouche-à-oreille, il soigne le suivi."
+   },
+   {
+    "name": "Équipé par son réseau",
+    "share": 0.25,
+    "how": "Son réseau de courtage lui fournit déjà un logiciel et des outils marketing."
+   },
+   {
+    "name": "Débordé",
+    "share": 0.2,
+    "how": "Répond aux messages le soir, n'a pas le temps d'installer un nouvel outil."
+   },
+   {
+    "name": "Fait sa com' sur LinkedIn",
+    "share": 0.15,
+    "how": "Publie les taux chaque semaine sur LinkedIn pour se faire connaître."
+   },
+   {
+    "name": "Compte chaque abonnement",
+    "share": 0.15,
+    "how": "Paie déjà plusieurs logiciels et cherche à réduire ses charges."
+   }
+  ],
+  "objections": [
+   "Mon réseau me fournit déjà des outils",
+   "Mes clients ne veulent pas un message de plus",
+   "Le taux moyen n'est pas le taux que j'obtiens pour eux",
+   "Risque de conformité si un chiffre est faux (IOBSP, ACPR)",
+   "Je n'ai pas le temps de l'installer",
+   "Un abonnement de plus dans mes charges"
+  ],
+  "habits": [
+   "tu envoies les taux du mois à tes clients par mail",
+   "tu relances tes clients en recherche chaque semaine par SMS",
+   "tu perds des clients qui partent voir leur banque en direct",
+   "tu publies sur LinkedIn le lundi"
+  ]
+ },
+ "pitch": "6h40 Courtier : chaque matin à 6 h 40, chacun de tes clients en recherche reçoit sur son téléphone sa capacité d'emprunt et sa mensualité recalculées avec le taux moyen du jour, à ton nom et ton logo, avec un bouton « appeler mon courtier ».\nTu entres le client une fois (revenus, apport, durée, prix visé) ; tu reçois une alerte quand sa capacité d'emprunt bouge de plus de 5 000 €, pour l'appeler au bon moment.\nChaque chiffre affiche sa source et la mention « estimation, pas une offre de prêt ».\nPrix : 29 € par mois pour jusqu'à 50 clients suivis, sans engagement, 30 jours gratuits.\nLa question : est-ce que tu prends 6h40 Courtier à 29 € par mois ?"
+}

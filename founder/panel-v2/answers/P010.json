@@ -1,0 +1,13 @@
+{
+  "id": "P010",
+  "buys": false,
+  "purchases_first_month": 0,
+  "reason_code": "need",
+  "reason": "Je refais déjà mes simulations moi-même chaque semaine et les simulateurs sont gratuits partout ; la page du matin gratuite me suffit pour suivre les taux. Je testerais peut-être les 14 jours, mais je ne vois pas pourquoi payer pour un recalcul que je fais en deux minutes.",
+  "objection": "Une notification qui me dit que ma mensualité a bougé de 12 €, ça va surtout nourrir mon stress sans me dire quoi faire, et ma banque ou mon courtier refera de toute façon son propre calcul avec mon vrai dossier.",
+  "would_change_my_mind": "Que mon courtier ou ma banque me dise que la fiche d'une page les aide vraiment à monter mon dossier ou à négocier le taux.",
+  "price_too_cheap": 2,
+  "price_cheap": 5,
+  "price_expensive": 10,
+  "price_too_expensive": 20
+}
