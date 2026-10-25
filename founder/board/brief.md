@@ -1,0 +1,1 @@
+Idée : 6h40, app web gratuite sans compte qui affiche chaque matin dix repères économiques traduits en euros, avec une offre Pro à 4 €/mois (mail matinal). Données : BCE, Yahoo Finance, data.economie.gouv.fr, et saisies manuelles (CRE, Insee, Pretto, Livret A). Cible et canal d'acquisition non définis.
