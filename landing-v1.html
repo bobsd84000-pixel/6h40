@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>6h40 — le tableau de bord de ton matin (logo A)</title>
+<meta name="description" content="Dix repères économiques chaque matin, traduits en euros pour toi. Sans compte.">
+<meta name="theme-color" content="#070707">
+<style>
+@font-face{font-family:'Geist';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/geist-400.woff2) format('woff2')}
+@font-face{font-family:'Geist';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/geist-500.woff2) format('woff2')}
+@font-face{font-family:'Geist';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/geist-600.woff2) format('woff2')}
+@font-face{font-family:'Geist Mono';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/geist-mono-500.woff2) format('woff2')}
+</style>
+<style>
+:root{--fond:#070707;--boitier:#141414;--carte:#0f0f0f;--filet:#262626;--encre:#d1d1d1;--vif:#e4e4e4;--sourd:#8f8f8f;--aiguille:#ed7940;--hausse:#7cd591;--baisse:#f78955;--r:14px}
+*{box-sizing:border-box;margin:0}
+html{background:var(--fond);-webkit-tap-highlight-color:transparent}
+body{background:var(--fond);color:var(--encre);font:400 1rem/1.5 'Geist',system-ui,sans-serif;padding:0 18px calc(40px + env(safe-area-inset-bottom))}
+.mono{font-family:'Geist Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+main{max-width:600px;margin:0 auto}
+:focus-visible{outline:2px solid var(--aiguille);outline-offset:3px;border-radius:6px}
+nav{display:flex;justify-content:space-between;align-items:center;min-height:56px;padding-top:env(safe-area-inset-top)}
+.logo{height:28px;width:auto;color:var(--encre)}
+.logo .a{stroke:var(--aiguille)}
+.logo path[stroke-width="24"]{stroke:var(--aiguille)}
+nav a.n{color:var(--sourd);text-decoration:none;font-size:.9375rem;min-height:48px;display:inline-flex;align-items:center}
+/* cadran */
+.cadran{display:block;width:min(78vw,300px);height:auto;margin:28px auto 8px}
+.cadran .fond{fill:var(--boitier)}
+.cadran .graduation{stroke:var(--vif);stroke-linecap:round}
+.cadran .rouge{stroke:var(--aiguille)}
+.cadran .aig{transform-origin:150px 150px;transform:rotate(-135deg);transition:transform 1.4s cubic-bezier(.23,1,.32,1) .2s}
+.js .cadran .aig{transform:rotate(-135deg)}
+.cadran.pret .aig{transform:rotate(var(--angle,-30deg))}
+.cadran text{fill:var(--vif);font-family:'Geist Mono',monospace}
+h1{font-size:clamp(2.4rem,9vw,3.4rem);line-height:1.02;font-weight:500;letter-spacing:-.02em;text-align:center;margin-top:8px}
+.lead{text-align:center;color:var(--sourd);font-size:1.0625rem;margin:14px auto 0;max-width:30ch}
+.cta{display:flex;align-items:center;justify-content:center;min-height:52px;margin:26px auto 0;border-radius:var(--r);background:var(--aiguille);color:#150a06;font-weight:600;text-decoration:none;width:100%;max-width:360px}
+.sous{text-align:center;color:var(--sourd);font-size:.8125rem;margin-top:10px}
+h2{font-size:1.5rem;font-weight:500;margin:56px 0 14px;letter-spacing:-.01em}
+.bord{background:var(--carte);border:1px solid var(--filet);border-radius:var(--r);overflow:hidden}
+.bord .l{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;padding:14px 16px;border-top:1px solid var(--filet)}
+.bord .l:first-child{border-top:0}
+.bord small{display:block;color:var(--sourd);font-size:.8125rem}
+.bord .v{font-size:1.0625rem}
+.bord .d{font-size:.875rem;min-width:5.5em;text-align:right}
+.up{color:var(--hausse)}.down{color:var(--baisse)}
+.trio{display:grid;gap:10px}
+.trio article{background:var(--carte);border:1px solid var(--filet);border-radius:var(--r);padding:18px}
+.trio b{display:block;font-size:1.75rem;font-weight:500;margin:6px 0 4px;color:var(--vif)}
+.trio p{color:var(--sourd);font-size:.9375rem}
+.prix{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:20px;border:1px solid var(--aiguille);border-radius:var(--r)}
+.prix b{font-size:2rem;font-weight:500}
+.prix span{color:var(--sourd);font-size:.9375rem}
+details{border-top:1px solid var(--filet);padding:14px 0}
+details:last-child{border-bottom:1px solid var(--filet)}
+summary{min-height:44px;display:flex;align-items:center;cursor:pointer;list-style:none;font-size:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";margin-left:auto;color:var(--sourd);font-family:'Geist Mono',monospace}
+details[open] summary::after{content:"−"}
+details p{color:var(--sourd);padding:4px 0 6px}
+footer{margin-top:48px;color:var(--sourd);font-size:.8125rem;text-align:center}
+@media (prefers-reduced-motion:reduce){.cadran .aig{transition:none}}
+</style>
+</head>
+<body class="js">
+<main>
+<nav aria-label="Principale">
+  <a href="#" class="logo" aria-label="6h40"><svg viewBox="0 0 760 256" height="28" role="img" aria-hidden="true"><circle cx="128" cy="128" r="106" fill="none" stroke="currentColor" stroke-width="20"/><path d="M128 40V58M128 128L108.16 182.50M128 128L53.52 171.00" fill="none" stroke="#ed7940" stroke-width="20" stroke-linecap="round"/><g fill="none" stroke="currentColor" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(296 48)"><circle cx="50" cy="112" r="38"/><path d="M12 112V64C12 32 32 10 60 10H80"/></g><g transform="translate(414 48)"><path d="M14 10V150M14 104C14 82 30 70 50 70S86 82 86 104V150"/></g><g transform="translate(532 48)"><path d="M68 150V10L10 108H94"/></g><g transform="translate(650 48)"><rect x="12" y="10" width="76" height="140" rx="38"/></g></g></svg></a>
+  <a class="n" href="#pro">Pro 4 €</a>
+</nav>
+
+<svg class="cadran" id="cadran" viewBox="0 0 300 300" aria-hidden="true">
+  <circle class="fond" cx="150" cy="150" r="140"/>
+  <g id="grad"></g>
+  <text id="c-var" x="150" y="266" text-anchor="middle" font-size="20" style="fill:var(--hausse)"></text>
+  <text id="c-per" x="150" y="281" text-anchor="middle" font-size="9" style="fill:var(--sourd)" letter-spacing="1"></text>
+  <text x="150" y="96" text-anchor="middle" font-size="9" style="fill:var(--sourd)" letter-spacing="1.5">PLUS FORTE HAUSSE</text>
+  <text id="c-nom" x="150" y="116" text-anchor="middle" font-size="13" letter-spacing=".5"></text>
+  <text id="c-val" x="150" y="214" text-anchor="middle" font-size="24"></text>
+  <line class="aig" x1="150" y1="150" x2="150" y2="36" stroke="#ed7940" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="150" cy="150" r="7" fill="#262626"/>
+</svg>
+
+<h1>Le tableau de bord de ton matin.</h1>
+<p class="lead">Dix repères économiques, chaque matin, traduits en euros pour toi. Sans compte, sans bruit.</p>
+<a class="cta" href="#repères">Voir le relevé d'aujourd'hui</a>
+<p class="sous">Relevé du 24&nbsp;octobre&nbsp;2026 · mis à jour à 6&nbsp;h&nbsp;40 · cadran : la plus forte hausse en %</p>
+
+<h2 id="repères">Les repères du jour</h2>
+<div class="bord mono">
+  <div class="l"><span>Dollar<small>pour 1 $ · 23 oct.</small></span><span class="v">0,89 €</span><span class="d">= 0,00 %</span></div>
+  <div class="l"><span>Baril Brent<small>23 oct.</small></span><span class="v">114,53 $</span><span class="d up">▲ +1,20 %</span></div>
+  <div class="l"><span>Or, l'once<small>23 oct.</small></span><span class="v">3 588 €</span><span class="d down">▼ −2,7 %</span></div>
+  <div class="l"><span>Taux 10 ans France<small>23 oct.</small></span><span class="v">5,06 %</span><span class="d down">▼ −0,01 pt</span></div>
+  <div class="l"><span>Gazole, le litre<small>moyenne France · 23 oct.</small></span><span class="v">2,359 €</span><span class="d up">▲ +0,6 %</span></div>
+  <div class="l"><span>Gaz, le kWh<small>prix repère CRE · oct.</small></span><span class="v">0,1456 €</span><span class="d up">▲ +8,0 %</span></div>
+  <div class="l"><span>Inflation sur un an<small>septembre 2026</small></span><span class="v">3,1 %</span><span class="d up">▲ +0,7 pt</span></div>
+  <div class="l"><span>Crédit immo 20 ans<small>moyenne octobre</small></span><span class="v">3,66 %</span><span class="d up">▲ +0,12 pt</span></div>
+  <div class="l"><span>Livret A<small>depuis le 1er août</small></span><span class="v">1,70 %</span><span class="d up">▲ +0,2 pt</span></div>
+  <div class="l"><span>Livre sterling<small>pour 1 £ · à recharger</small></span><span class="v">indispo.</span><span class="d">—</span></div>
+</div>
+
+<h2>Traduit pour toi</h2>
+<div class="trio">
+  <article><span class="mono" style="font-size:.8125rem;color:var(--sourd)">ÉNERGIE, CE MOIS-CI</span><b class="mono">263 €</b><p>Carburant et gaz pour une voiture à 6 L/100 km et 1&nbsp;000 km par mois. Hypothèses modifiables.</p></article>
+  <article><span class="mono" style="font-size:.8125rem;color:var(--sourd)">ÉPARGNE, SUR 10&nbsp;000 €</span><b class="mono">−136 € / an</b><p>Le Livret A à 1,7 % ne bat pas l'inflation de 3,1 %.</p></article>
+  <article><span class="mono" style="font-size:.8125rem;color:var(--sourd)">PRÊT DE 200&nbsp;000 € SUR 20 ANS</span><b class="mono">1&nbsp;176 € / mois</b><p>+41 € par mois par rapport au taux moyen de l'été.</p></article>
+</div>
+
+<h2 id="pro">6h40, pro</h2>
+<div class="prix"><span>Le relevé par mail chaque matin à 6&nbsp;h&nbsp;40, alertes illimitées.</span><b class="mono">4 €<small style="font-size:.9375rem;color:var(--sourd)"> / mois</small></b></div>
+<p class="sous">Lien de paiement : <em>à préciser</em>. Résiliable en un clic.</p>
+
+<h2>Questions</h2>
+<details><summary>Faut-il un compte ?</summary><p>Non. La page marche tout de suite. Seul Pro demande une adresse mail.</p></details>
+<details><summary>D'où viennent les chiffres ?</summary><p>Banque de France et BCE pour les devises, Insee, Pretto, CRE, info.gouv.fr, prix-carburant.eu, Club Patrimoine, Économie Matin.</p></details>
+<details><summary>Comment résilier ?</summary><p>En un clic depuis le reçu. L'accès reste actif jusqu'à la fin du mois payé.</p></details>
+
+<footer>6h40 · Information, pas un conseil financier.</footer>
+</main>
+<script>
+// graduations du cadran : 0 à 10 %, sur 270°
+var g=document.getElementById('grad'),ns='http://www.w3.org/2000/svg';
+// échelle 0 à 10 % : un trait tous les 0,5 %, un moyen tous les 1 %, un chiffre tous les 2 %
+for(var i=0;i<=20;i++){var a=(-135+270*i/20)*Math.PI/180,gros=i%4===0,moyen=i%2===0,r1=118,r2=gros?100:(moyen?104:108),l=document.createElementNS(ns,'line');
+  l.setAttribute('x1',150+r1*Math.sin(a));l.setAttribute('y1',150-r1*Math.cos(a));l.setAttribute('x2',150+r2*Math.sin(a));l.setAttribute('y2',150-r2*Math.cos(a));
+  l.setAttribute('class',(i>=12?'graduation rouge':'graduation'));l.setAttribute('stroke-width',gros?'3':(moyen?'1.8':'1.2'));g.appendChild(l);
+  if(gros){var t=document.createElementNS(ns,'text'),rv=128;
+    t.setAttribute('x',(150+rv*Math.sin(a)).toFixed(1));t.setAttribute('y',(150-rv*Math.cos(a)+4.5).toFixed(1));
+    t.setAttribute('text-anchor','middle');t.setAttribute('font-size','14');
+    t.setAttribute('style','fill:'+(i>=12?'var(--aiguille)':'var(--sourd)'));
+    t.textContent=String(i/2);g.appendChild(t)}
+}
+// Plus forte hausse du jour, parmi les repères exprimés en % sur 1 jour
+var REP=[
+ {nom:'Dollar',val:'0,89 €',pct:0,per:'SUR 1 JOUR'},
+ {nom:'Baril Brent',val:'114,53 $',pct:1.2,per:'SUR 1 JOUR'},
+ {nom:"Or, l'once",val:'3 588 €',pct:-2.7,per:'SUR 1 JOUR'},
+ {nom:'Gazole, le litre',val:'2,359 €',pct:0.6,per:'SUR 24 H'}
+];
+var haut=REP.reduce(function(a,b){return b.pct>a.pct?b:a});
+document.getElementById('c-nom').textContent=haut.nom.toUpperCase();
+document.getElementById('c-val').textContent=haut.val;
+document.getElementById('c-var').textContent='▲ +'+haut.pct.toLocaleString('fr-FR',{minimumFractionDigits:1})+' %';
+document.getElementById('c-per').textContent=haut.per;
+document.getElementById('cadran').setAttribute('aria-label','Plus forte hausse du jour : '+haut.nom+', '+haut.val+', +'+haut.pct.toLocaleString('fr-FR')+' %');
+document.getElementById('cadran').setAttribute('role','img');document.getElementById('cadran').removeAttribute('aria-hidden');
+var ang=-135+270*Math.max(0,Math.min(10,haut.pct))/10;
+requestAnimationFrame(function(){requestAnimationFrame(function(){var c=document.getElementById('cadran');c.style.setProperty('--angle',ang+'deg');c.classList.add('pret')})});
+</script>
+</body>
+</html>
