@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6h40 — architecture</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Skin 6h40 (mode sombre de index.html) appliqué au skill diagram-design */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-paper:  #070707;
+      --color-ink:    #d1d1d1;
+      --color-muted:  #929292;
+      --color-accent: #ed7940;
+      --font-sans:  'Geist', system-ui, sans-serif;
+      --font-serif: 'Instrument Serif', serif;
+      --font-mono:  'Geist Mono', ui-monospace, monospace;
+    }
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-paper);
+      color: var(--color-ink);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem;
+    }
+    .frame { max-width: 1200px; width: 100%; }
+    .diagram-container { width: 100%; overflow-x: auto; }
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--color-ink);
+      margin-bottom: 1.5rem;
+    }
+    svg { width: 100%; min-width: 960px; display: block; }
+    @media print {
+      .diagram-container { overflow-x: visible; }
+      svg { min-width: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <p class="eyebrow">Architecture · 6h40</p>
+    <h1>Comment 6h40 fabrique le relevé du matin</h1>
+
+    <div class="diagram-container">
+      <svg viewBox="0 0 960 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="architecture-6h40-title architecture-6h40-desc">
+        <title id="architecture-6h40-title">Comment 6h40 fabrique le relevé du matin</title>
+        <desc id="architecture-6h40-desc">Les repères du jour alimentent deux fonctions Vercel : le relevé lu par la page et la tâche de 5 h 40 UTC, qui enregistre le relevé dans Supabase et envoie le mail Pro avec Resend ; Lemon Squeezy tient la liste des abonnés via un webhook signé.</desc>
+        <defs>
+          <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#929292"/></marker>
+          <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#ed7940"/></marker>
+          <marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#7ea7dc"/></marker>
+        </defs>
+
+        <rect width="100%" height="100%" fill="#070707"/>
+
+        <!-- Zone : fonctions Vercel -->
+        <rect x="344" y="68" width="232" height="392" rx="8" fill="rgba(209,209,209,0.02)" stroke="rgba(209,209,209,0.10)" stroke-width="0.8"/>
+        <rect x="404" y="72" width="112" height="12" rx="2" fill="#070707"/>
+        <text x="460" y="81" fill="#929292" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.14em">VERCEL · FONCTIONS</text>
+
+        <!-- Flèches (avant les nœuds) -->
+        <!-- Repères → relevé -->
+        <line x1="240" y1="132" x2="360" y2="132" stroke="#929292" stroke-width="1" marker-end="url(#arrow)"/>
+        <!-- Repères → tâche du matin -->
+        <path d="M208,164 V404 Q208,412 216,412 H360" fill="none" stroke="#929292" stroke-width="1" marker-end="url(#arrow)"/>
+        <!-- Relevé → page -->
+        <line x1="560" y1="120" x2="700" y2="120" stroke="#7ea7dc" stroke-width="1.2" marker-end="url(#arrow-link)"/>
+        <!-- Relevé → Supabase -->
+        <path d="M560,144 H632 Q640,144 640,152 V252 Q640,260 648,260 H700" fill="none" stroke="#929292" stroke-width="1" marker-end="url(#arrow)"/>
+        <!-- Lemon → webhook (pont au croisement x=208) -->
+        <path d="M160,272 H200 a 8,8 0 0,1 16,0 H360" fill="none" stroke="#7ea7dc" stroke-width="1.2" marker-end="url(#arrow-link)"/>
+        <!-- Webhook → Supabase -->
+        <line x1="560" y1="284" x2="700" y2="284" stroke="#929292" stroke-width="1" marker-end="url(#arrow)"/>
+        <!-- Tâche du matin → Supabase (flux principal) -->
+        <path d="M560,396 H772 Q780,396 780,388 V304" fill="none" stroke="#ed7940" stroke-width="1.4" marker-end="url(#arrow-accent)"/>
+        <!-- Tâche du matin → Resend -->
+        <line x1="560" y1="420" x2="800" y2="420" stroke="#7ea7dc" stroke-width="1.2" marker-end="url(#arrow-link)"/>
+
+        <!-- Étiquettes de flèches -->
+        <rect x="594" y="100" width="72" height="12" rx="2" fill="#070707"/>
+        <text x="630" y="109" fill="#929292" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">JSON · 15 MIN</text>
+
+        <rect x="648" y="194" width="36" height="12" rx="2" fill="#070707"/>
+        <text x="666" y="203" fill="#929292" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">ÉCRIT</text>
+
+        <rect x="254" y="252" width="68" height="12" rx="2" fill="#070707"/>
+        <text x="288" y="261" fill="#929292" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">WEBHOOK HMAC</text>
+
+        <rect x="608" y="290" width="44" height="12" rx="2" fill="#070707"/>
+        <text x="630" y="299" fill="#929292" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">ABONNÉS</text>
+
+        <rect x="788" y="340" width="68" height="12" rx="2" fill="#070707"/>
+        <text x="822" y="349" fill="#ed7940" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">CHAQUE MATIN</text>
+
+        <rect x="656" y="426" width="48" height="12" rx="2" fill="#070707"/>
+        <text x="680" y="435" fill="#929292" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">MAIL PRO</text>
+
+        <!-- Nœuds -->
+        <!-- Repères du jour (externe) -->
+        <rect x="40" y="100" width="200" height="64" rx="6" fill="#070707"/>
+        <rect x="40" y="100" width="200" height="64" rx="6" fill="rgba(209,209,209,0.03)" stroke="rgba(209,209,209,0.30)" stroke-width="1"/>
+        <rect x="48" y="106" width="28" height="12" rx="2" fill="transparent" stroke="rgba(209,209,209,0.30)" stroke-width="0.8"/>
+        <text x="62" y="115" fill="#929292" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">EXT</text>
+        <text x="140" y="138" fill="#d1d1d1" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Repères du jour</text>
+        <text x="140" y="154" fill="#929292" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">BCE · Yahoo · gazole · manuel</text>
+
+        <!-- Lemon Squeezy (externe) -->
+        <rect x="40" y="240" width="120" height="64" rx="6" fill="#070707"/>
+        <rect x="40" y="240" width="120" height="64" rx="6" fill="rgba(209,209,209,0.03)" stroke="rgba(209,209,209,0.30)" stroke-width="1"/>
+        <rect x="48" y="246" width="28" height="12" rx="2" fill="transparent" stroke="rgba(209,209,209,0.30)" stroke-width="0.8"/>
+        <text x="62" y="255" fill="#929292" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">EXT</text>
+        <text x="100" y="278" fill="#d1d1d1" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Lemon Squeezy</text>
+        <text x="100" y="294" fill="#929292" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">Pro · 4 €/mois</text>
+
+        <!-- Relevé du jour (API) -->
+        <rect x="360" y="100" width="200" height="64" rx="6" fill="#070707"/>
+        <rect x="360" y="100" width="200" height="64" rx="6" fill="#0f0f0f" stroke="#d1d1d1" stroke-width="1"/>
+        <rect x="368" y="106" width="28" height="12" rx="2" fill="transparent" stroke="rgba(209,209,209,0.40)" stroke-width="0.8"/>
+        <text x="382" y="115" fill="#929292" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">API</text>
+        <text x="460" y="138" fill="#d1d1d1" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Relevé du jour</text>
+        <text x="460" y="154" fill="#929292" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">GET /api/releve</text>
+
+        <!-- Abonnements (API) -->
+        <rect x="360" y="240" width="200" height="64" rx="6" fill="#070707"/>
+        <rect x="360" y="240" width="200" height="64" rx="6" fill="#0f0f0f" stroke="#d1d1d1" stroke-width="1"/>
+        <rect x="368" y="246" width="28" height="12" rx="2" fill="transparent" stroke="rgba(209,209,209,0.40)" stroke-width="0.8"/>
+        <text x="382" y="255" fill="#929292" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">API</text>
+        <text x="460" y="278" fill="#d1d1d1" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Abonnements</text>
+        <text x="460" y="294" fill="#929292" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">POST /api/lemon</text>
+
+        <!-- Tâche du matin (focal) -->
+        <rect x="360" y="380" width="200" height="64" rx="6" fill="#070707"/>
+        <rect x="360" y="380" width="200" height="64" rx="6" fill="rgba(237,121,64,0.10)" stroke="#ed7940" stroke-width="1"/>
+        <rect x="368" y="386" width="32" height="12" rx="2" fill="transparent" stroke="rgba(237,121,64,0.50)" stroke-width="0.8"/>
+        <text x="384" y="395" fill="#ed7940" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">CRON</text>
+        <text x="460" y="418" fill="#d1d1d1" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Tâche du matin</text>
+        <text x="460" y="434" fill="#929292" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">/api/cron · 5 h 40 UTC</text>
+
+        <!-- Page 6h40 (utilisateur) -->
+        <rect x="700" y="100" width="220" height="64" rx="6" fill="#070707"/>
+        <rect x="700" y="100" width="220" height="64" rx="6" fill="rgba(146,146,146,0.10)" stroke="#929292" stroke-width="1"/>
+        <rect x="708" y="106" width="28" height="12" rx="2" fill="transparent" stroke="rgba(146,146,146,0.40)" stroke-width="0.8"/>
+        <text x="722" y="115" fill="#929292" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">UI</text>
+        <text x="810" y="138" fill="#d1d1d1" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Page 6h40</text>
+        <text x="810" y="154" fill="#929292" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">index.html · navigateur</text>
+
+        <!-- Supabase (stockage) -->
+        <rect x="700" y="240" width="220" height="64" rx="6" fill="#070707"/>
+        <rect x="700" y="240" width="220" height="64" rx="6" fill="rgba(209,209,209,0.05)" stroke="#929292" stroke-width="1"/>
+        <rect x="708" y="246" width="28" height="12" rx="2" fill="transparent" stroke="rgba(146,146,146,0.40)" stroke-width="0.8"/>
+        <text x="722" y="255" fill="#929292" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">DB</text>
+        <text x="810" y="278" fill="#d1d1d1" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Supabase</text>
+        <text x="810" y="294" fill="#929292" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">h640_releves · h640_abonnes</text>
+
+        <!-- Resend (externe) -->
+        <rect x="800" y="380" width="120" height="64" rx="6" fill="#070707"/>
+        <rect x="800" y="380" width="120" height="64" rx="6" fill="rgba(209,209,209,0.03)" stroke="rgba(209,209,209,0.30)" stroke-width="1"/>
+        <rect x="808" y="386" width="28" height="12" rx="2" fill="transparent" stroke="rgba(209,209,209,0.30)" stroke-width="0.8"/>
+        <text x="822" y="395" fill="#929292" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">EXT</text>
+        <text x="860" y="418" fill="#d1d1d1" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Resend</text>
+        <text x="860" y="434" fill="#929292" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">mail abonnés Pro</text>
+
+        <!-- Légende -->
+        <line x1="40" y1="488" x2="920" y2="488" stroke="rgba(209,209,209,0.10)" stroke-width="0.8"/>
+        <text x="40" y="504" fill="#929292" font-size="8" font-family="'Geist Mono', monospace" letter-spacing="0.18em">LÉGENDE</text>
+
+        <rect x="40" y="520" width="14" height="10" rx="2" fill="rgba(237,121,64,0.10)" stroke="#ed7940" stroke-width="1"/>
+        <text x="60" y="528" fill="#929292" font-size="8.5" font-family="'Geist', sans-serif">Cœur du matin</text>
+
+        <rect x="152" y="520" width="14" height="10" rx="2" fill="#0f0f0f" stroke="#d1d1d1" stroke-width="1"/>
+        <text x="172" y="528" fill="#929292" font-size="8.5" font-family="'Geist', sans-serif">Fonction Vercel</text>
+
+        <rect x="268" y="520" width="14" height="10" rx="2" fill="rgba(209,209,209,0.05)" stroke="#929292" stroke-width="1"/>
+        <text x="288" y="528" fill="#929292" font-size="8.5" font-family="'Geist', sans-serif">Base de données</text>
+
+        <rect x="388" y="520" width="14" height="10" rx="2" fill="rgba(146,146,146,0.10)" stroke="#929292" stroke-width="1"/>
+        <text x="408" y="528" fill="#929292" font-size="8.5" font-family="'Geist', sans-serif">Utilisateur</text>
+
+        <rect x="480" y="520" width="14" height="10" rx="2" fill="rgba(209,209,209,0.03)" stroke="rgba(209,209,209,0.30)" stroke-width="1"/>
+        <text x="500" y="528" fill="#929292" font-size="8.5" font-family="'Geist', sans-serif">Service externe</text>
+
+        <line x1="600" y1="526" x2="628" y2="526" stroke="#7ea7dc" stroke-width="1.2" marker-end="url(#arrow-link)"/>
+        <text x="636" y="528" fill="#929292" font-size="8.5" font-family="'Geist', sans-serif">Appel HTTP</text>
+
+        <line x1="724" y1="526" x2="752" y2="526" stroke="#ed7940" stroke-width="1.4" marker-end="url(#arrow-accent)"/>
+        <text x="760" y="528" fill="#929292" font-size="8.5" font-family="'Geist', sans-serif">Flux principal</text>
+      </svg>
+    </div>
+  </div>
+</body>
+</html>
