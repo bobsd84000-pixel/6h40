@@ -10,9 +10,13 @@
 <script>
 (function(){var s=null;try{s=localStorage.getItem('cot-theme')}catch(e){}if(s==='clair')document.documentElement.dataset.theme='clair'})();
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Geist';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/geist-400.woff2) format('woff2')}
+@font-face{font-family:'Geist';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/geist-500.woff2) format('woff2')}
+@font-face{font-family:'Geist';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/geist-600.woff2) format('woff2')}
+@font-face{font-family:'Geist Mono';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/geist-mono-500.woff2) format('woff2')}
+@font-face{font-family:'Instrument Serif';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/instrument-serif-400.woff2) format('woff2')}
+</style>
 <style>
 /* 6h40 — « un carnet de relevés tenu à l'aube » */
 :root{--fond:#070707;--carte:#0f0f0f;--releve:#1d1d1d;--encre:#d1d1d1;--sourd:#929292;--filet:#262626;--aiguille:#ed7940;--sur-aiguille:#150a06;--hausse:#7cd591;--baisse:#f78955;--toast-bg:#e4e4e4;--toast-fg:#0b0b0b;
