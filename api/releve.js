@@ -17,7 +17,8 @@ export async function GET() {
     if (base) { try { await sauverReleve(rel); } catch (e) { rel.erreurs.sauvegarde = e.message; } }
   }
   return Response.json(
-    { ...rel, lienPro: (process.env.LEMON_LIEN_PRO || '').trim() },
+    // Les détails des erreurs (messages Supabase, hôtes) restent côté serveur : on ne publie que les repères touchés
+    { ...rel, erreurs: Object.keys(rel.erreurs || {}), lienPro: (process.env.LEMON_LIEN_PRO || '').trim() },
     { headers: { 'cache-control': 'public, s-maxage=900, stale-while-revalidate=3600' } }
   );
 }
